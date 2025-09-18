@@ -579,3 +579,45 @@ $pages->assertNoJavascriptErrors()->assertNoConsoleLogs();
 - Every change must be programmatically tested. Write a new test or update an existing test, then run the affected tests to make sure they pass.
 - Run the minimum number of tests needed to ensure code quality and speed. Use `php artisan test` with a specific filename or filter.
 </laravel-boost-guidelines>
+
+# Current Feature Context
+<!-- AUTO-GENERATED FEATURE CONTEXT - DO NOT MODIFY MANUALLY -->
+
+## Active Feature: Vital Signs Tracking System (001-build-a-feature)
+
+**Feature Status**: In Development
+**Tech Stack**: PHP 8.4.11, Laravel 12.x, Inertia.js, React, ShadCN UI, Livewire 3, Volt, NativePHP, PostgreSQL, Pest 4
+**Architecture**: Monolithic Laravel application with Inertia frontend integration
+
+### Key Models & Entities
+- **User**: Health tracking individuals with profile and authentication
+- **VitalSignsRecord**: Individual measurement entries (BP, oxygen, weight, glucose)
+- **VitalSignType**: Measurement type definitions with validation rules
+- **MedicalProfessional**: Healthcare providers with patient access
+- **Recommendation**: System-generated advice based on trends
+- **PatientProviderConsent**: Patient-provider access relationship management
+
+### Core Features
+- Vital signs recording with physiological validation
+- Trend analysis and visualization over configurable periods
+- Personalized health recommendations and alerts
+- Medical professional access with consent management
+- Data flagging for abnormal readings
+- Audit trail for healthcare provider access
+
+### Implementation Guidelines
+- Use Laravel 12 streamlined structure (no app/Http/Middleware)
+- Leverage Livewire Volt for interactive pages
+- Apply Flux UI components for consistent interface
+- Implement proper healthcare data validation ranges
+- Follow HIPAA-aware security practices for medical data
+- Use Pest 4 for comprehensive testing including browser tests
+
+### Recent Changes
+1. Feature specification created with 8 functional requirements
+2. Implementation plan and research completed
+3. Data model designed with 7 core entities and relationships
+4. API contracts defined in OpenAPI 3.0 specification
+5. Quickstart verification scenarios established
+
+<!-- END AUTO-GENERATED FEATURE CONTEXT -->
