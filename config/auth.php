@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'sanctum' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
+        'medical' => [
+            'driver' => 'session',
+            'provider' => 'medical_professionals',
+        ],
+        'medical_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'medical_professionals',
+        ],
     ],
 
     /*
@@ -63,6 +75,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+        'medical_professionals' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\MedicalProfessional::class,
         ],
 
         // 'users' => [
@@ -94,6 +111,13 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'medical_professionals' => [
+            'provider' => 'medical_professionals',
+            'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
         ],
